@@ -10,82 +10,60 @@ export function Hero() {
     >
       <SignalField />
 
-      <div className="section-pad relative z-10 grid w-full items-start gap-10 md:grid-cols-[200px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
-        {/* 4:5 formal portrait — aligned to the top of the name block */}
+      <div className="section-pad relative z-10 w-full max-w-3xl">
+        <motion.p
+          className="font-display mb-5 text-[clamp(2.4rem,6.5vw,4.5rem)] leading-[1.08] text-ink text-balance"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: easeOut }}
+        >
+          Kanistan
+          <br />
+          Raseswaran
+        </motion.p>
+
         <motion.div
-          className="mx-auto w-[168px] shrink-0 md:mx-0 md:w-full"
+          className="max-w-xl space-y-3"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.1, ease: easeOut }}
+          transition={{ duration: 0.7, delay: 0.12, ease: easeOut }}
         >
-          <div className="relative aspect-[4/5] overflow-hidden bg-mist ring-1 ring-ink/12">
-            <img
-              src={`${import.meta.env.BASE_URL}portrait.jpg`}
-              alt="Kanistan Raseswaran"
-              width={800}
-              height={1000}
-              className="h-full w-full object-cover object-center"
-              decoding="async"
-              fetchPriority="high"
-            />
-          </div>
+          <h1 className="text-lg font-medium tracking-tight text-ink sm:text-xl">
+            Associate Full-Cycle Engineer
+          </h1>
+          <p className="text-sm leading-relaxed text-ink-soft sm:text-[0.95rem]">
+            Dedicated Quality Assurance Engineer · Trained Forward Deployed
+            Engineer
+          </p>
+          <p className="max-w-md text-sm leading-relaxed text-ink-soft/90">
+            I keep CPaaS releases reliable — API, UI, data validation, and
+            production implementation — with Forward Deployed Engineering
+            training for client-facing delivery.
+          </p>
+          <p className="pt-1 text-xs tracking-[0.12em] text-ink-soft uppercase">
+            Ariyalai, Jaffna · Wellawatte, Colombo
+          </p>
         </motion.div>
 
-        <div className="min-w-0">
-          <motion.p
-            className="font-display mb-5 text-[clamp(2.4rem,6.5vw,4.5rem)] leading-[1.08] text-ink text-balance"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: easeOut }}
+        <motion.div
+          className="mt-8 flex flex-wrap items-center gap-3"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.28, ease: easeOut }}
+        >
+          <a
+            href="#work"
+            className="inline-flex items-center bg-ink px-5 py-2.5 text-sm font-medium text-paper transition hover:bg-ink-soft"
           >
-            Kanistan
-            <br />
-            Raseswaran
-          </motion.p>
-
-          <motion.div
-            className="max-w-xl space-y-3"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: easeOut }}
+            See the work
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink/50"
           >
-            <h1 className="text-lg font-medium tracking-tight text-ink sm:text-xl">
-              Associate Full-Cycle Engineer
-            </h1>
-            <p className="text-sm leading-relaxed text-ink-soft sm:text-[0.95rem]">
-              Dedicated Quality Assurance Engineer · Trained Forward Deployed
-              Engineer
-            </p>
-            <p className="max-w-md text-sm leading-relaxed text-ink-soft/90">
-              I keep CPaaS releases reliable — API, UI, data validation, and
-              production implementation — with Forward Deployed Engineering
-              training for client-facing delivery.
-            </p>
-            <p className="pt-1 text-xs tracking-[0.12em] text-ink-soft uppercase">
-              Ariyalai, Jaffna · Wellawatte, Colombo
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="mt-8 flex flex-wrap items-center gap-3"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.28, ease: easeOut }}
-          >
-            <a
-              href="#work"
-              className="inline-flex items-center bg-ink px-5 py-2.5 text-sm font-medium text-paper transition hover:bg-ink-soft"
-            >
-              See the work
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink/50"
-            >
-              Contact
-            </a>
-          </motion.div>
-        </div>
+            Contact
+          </a>
+        </motion.div>
       </div>
     </section>
   )
