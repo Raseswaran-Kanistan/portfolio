@@ -25,8 +25,8 @@ const items = [
   },
   {
     label: 'Education',
-    value: 'B.Sc. Computer Science',
-    detail: 'University of Jaffna · Honours · GPA 3.18 / 4.00',
+    value: 'B.Sc. Honours in Computer Science',
+    detail: 'University of Jaffna · GPA 3.18 / 4.00',
   },
 ]
 
