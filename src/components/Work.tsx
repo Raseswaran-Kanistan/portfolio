@@ -14,8 +14,8 @@ const projects = [
     title: 'Yathra — Travel Plan Creation',
     blurb:
       'Sri Lanka public-transit planning product: conversational journey planning, agent workflows, and Cloud Run delivery. Built at hSenid Mobile Solutions under Forward Deployed Engineering training.',
-    meta: 'hSenid Mobile Solutions · GitHub · Travel-Plan-Creation',
-    href: 'https://github.com/Raseswaran-Kanistan/Travel-Plan-Creation',
+    meta: 'hSenid Mobile Solutions · Live demo (registration required)',
+    href: 'https://travel-plan-creation-wviq3jiw7a-uc.a.run.app',
   },
   {
     tag: 'Research',
