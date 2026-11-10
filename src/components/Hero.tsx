@@ -6,11 +6,11 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] items-end overflow-hidden pb-14 pt-24 sm:pb-20 sm:pt-28"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pb-16 pt-24 sm:pb-20 sm:pt-28"
     >
       <SignalField />
 
-      <div className="section-pad relative z-10 grid w-full items-end gap-10 lg:grid-cols-[minmax(0,1.2fr)_auto] lg:gap-16">
+      <div className="section-pad relative z-10 grid w-full items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-16">
         <div>
           <motion.p
             className="font-display mb-5 text-[clamp(2.5rem,7.5vw,4.75rem)] leading-[1.05] text-ink text-balance"
@@ -41,6 +41,9 @@ export function Hero() {
               production implementation — with Forward Deployed Engineering
               training for client-facing delivery.
             </p>
+            <p className="pt-1 text-xs tracking-[0.12em] text-ink-soft uppercase">
+              Ariyalai, Jaffna · Wellawatte, Colombo
+            </p>
           </motion.div>
 
           <motion.div
@@ -65,27 +68,22 @@ export function Hero() {
         </div>
 
         <motion.div
-          className="relative mx-auto flex w-full max-w-[220px] flex-col items-center sm:max-w-[240px] lg:mx-0 lg:mb-2 lg:justify-self-end"
+          className="relative mx-auto w-[220px] sm:w-[260px] lg:mx-0 lg:w-full"
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85, delay: 0.16, ease: easeOut }}
         >
-          <div className="relative aspect-square w-full overflow-hidden rounded-full bg-mist shadow-[0_0_0_1px_rgba(10,31,46,0.12)]">
+          <div className="relative aspect-square w-full overflow-hidden rounded-full bg-mist ring-1 ring-ink/15">
             <img
               src={`${import.meta.env.BASE_URL}portrait.jpg`}
               alt="Kanistan Raseswaran"
-              width={900}
-              height={900}
-              className="h-full w-full scale-[1.08] object-cover object-[50%_28%]"
+              width={1000}
+              height={1000}
+              className="h-full w-full scale-110 object-cover object-center"
               decoding="async"
               fetchPriority="high"
             />
           </div>
-          <p className="mt-4 text-center text-xs tracking-[0.12em] text-ink-soft uppercase">
-            Ariyalai, Jaffna
-            <br />
-            Wellawatte, Colombo
-          </p>
         </motion.div>
       </div>
     </section>
