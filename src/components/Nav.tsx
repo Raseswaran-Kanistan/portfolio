@@ -15,13 +15,7 @@ export function Nav() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
     >
-      <div className="section-pad flex items-center justify-between py-5">
-        <a
-          href="#top"
-          className="font-display text-base tracking-[0.08em] text-ink"
-        >
-          KR
-        </a>
+      <div className="section-pad flex items-center justify-end py-5">
         <nav className="flex items-center gap-6 text-sm text-ink-soft">
           {links.map((l) => (
             <a

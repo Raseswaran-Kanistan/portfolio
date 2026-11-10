@@ -10,10 +10,10 @@ export function Hero() {
     >
       <SignalField />
 
-      <div className="section-pad relative z-10 grid w-full items-end gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(240px,0.72fr)] lg:gap-14">
+      <div className="section-pad relative z-10 grid w-full items-end gap-10 lg:grid-cols-[minmax(0,1.2fr)_auto] lg:gap-16">
         <div>
           <motion.p
-            className="font-display mb-5 text-[clamp(2.75rem,8.5vw,5.4rem)] leading-[0.95] tracking-[-0.02em] text-ink text-balance"
+            className="font-display mb-5 text-[clamp(2.5rem,7.5vw,4.75rem)] leading-[1.05] text-ink text-balance"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: easeOut }}
@@ -65,25 +65,26 @@ export function Hero() {
         </div>
 
         <motion.div
-          className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:mx-0 lg:max-w-none lg:justify-self-end"
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.18, ease: easeOut }}
+          className="relative mx-auto flex w-full max-w-[220px] flex-col items-center sm:max-w-[240px] lg:mx-0 lg:mb-2 lg:justify-self-end"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.85, delay: 0.16, ease: easeOut }}
         >
-          <div className="relative aspect-[4/5] overflow-hidden bg-mist/80">
+          <div className="relative aspect-square w-full overflow-hidden rounded-full bg-mist shadow-[0_0_0_1px_rgba(10,31,46,0.12)]">
             <img
               src={`${import.meta.env.BASE_URL}portrait.jpg`}
               alt="Kanistan Raseswaran"
-              width={1100}
-              height={1340}
-              className="h-full w-full object-cover object-[50%_12%]"
+              width={900}
+              height={900}
+              className="h-full w-full scale-[1.08] object-cover object-[50%_28%]"
               decoding="async"
               fetchPriority="high"
             />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-ink/10 ring-inset" />
           </div>
-          <p className="mt-3 text-xs tracking-[0.12em] text-ink-soft uppercase">
-            Ariyalai, Jaffna · Wellawatte, Colombo
+          <p className="mt-4 text-center text-xs tracking-[0.12em] text-ink-soft uppercase">
+            Ariyalai, Jaffna
+            <br />
+            Wellawatte, Colombo
           </p>
         </motion.div>
       </div>
