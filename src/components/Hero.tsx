@@ -10,10 +10,30 @@ export function Hero() {
     >
       <SignalField />
 
-      <div className="section-pad relative z-10 grid w-full items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-16">
-        <div>
+      <div className="section-pad relative z-10 grid w-full items-start gap-10 md:grid-cols-[200px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
+        {/* 4:5 formal portrait — aligned to the top of the name block */}
+        <motion.div
+          className="mx-auto w-[168px] shrink-0 md:mx-0 md:w-full"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.1, ease: easeOut }}
+        >
+          <div className="relative aspect-[4/5] overflow-hidden bg-mist ring-1 ring-ink/12">
+            <img
+              src={`${import.meta.env.BASE_URL}portrait.jpg`}
+              alt="Kanistan Raseswaran"
+              width={800}
+              height={1000}
+              className="h-full w-full object-cover object-center"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
+        </motion.div>
+
+        <div className="min-w-0">
           <motion.p
-            className="font-display mb-5 text-[clamp(2.5rem,7.5vw,4.75rem)] leading-[1.05] text-ink text-balance"
+            className="font-display mb-5 text-[clamp(2.4rem,6.5vw,4.5rem)] leading-[1.08] text-ink text-balance"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: easeOut }}
@@ -66,25 +86,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        <motion.div
-          className="relative mx-auto w-[220px] sm:w-[260px] lg:mx-0 lg:w-full"
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.85, delay: 0.16, ease: easeOut }}
-        >
-          <div className="relative aspect-square w-full overflow-hidden rounded-full bg-mist ring-1 ring-ink/15">
-            <img
-              src={`${import.meta.env.BASE_URL}portrait.jpg`}
-              alt="Kanistan Raseswaran"
-              width={1000}
-              height={1000}
-              className="h-full w-full scale-110 object-cover object-center"
-              decoding="async"
-              fetchPriority="high"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   )
