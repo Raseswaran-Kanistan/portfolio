@@ -13,8 +13,8 @@ const projects = [
     tag: 'Forward Deployed Engineering',
     title: 'Yathra — Travel Plan Creation',
     blurb:
-      'Sri Lanka public-transit planning product: conversational journey planning, agent workflows, and Cloud Run delivery. Built under Forward Deployed Engineering training for real client-facing systems.',
-    meta: 'GitHub · Raseswaran-Kanistan/Travel-Plan-Creation',
+      'Sri Lanka public-transit planning product: conversational journey planning, agent workflows, and Cloud Run delivery. Built at hSenid Mobile Solutions under Forward Deployed Engineering training.',
+    meta: 'hSenid Mobile Solutions · GitHub · Travel-Plan-Creation',
     href: 'https://github.com/Raseswaran-Kanistan/Travel-Plan-Creation',
   },
   {
@@ -39,29 +39,27 @@ export function Work() {
           viewport={sectionView}
           transition={sectionTransition()}
         >
-          <p className="mb-3 text-xs font-medium tracking-[0.2em] text-signal-deep uppercase">
-            Selected work
-          </p>
-          <h2 className="font-display max-w-2xl text-3xl tracking-tight text-ink sm:text-4xl">
+          <p className="section-label text-signal-deep">Selected work</p>
+          <h2 className="section-title max-w-2xl text-ink">
             Proof over polish — releases, products, research.
           </h2>
         </motion.div>
 
-        <div className="mt-14 divide-y divide-ink/10 border-y border-ink/10">
+        <div className="mt-10 divide-y divide-ink/10 border-y border-ink/10 sm:mt-14">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              className="grid gap-4 py-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] sm:gap-10"
+              className="grid gap-3 py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] sm:gap-8 sm:py-10 lg:gap-10"
               initial={reduce ? false : fadeUp.initial}
               whileInView={fadeUp.animate}
               viewport={sectionView}
               transition={sectionTransition(i * 0.07)}
             >
               <div>
-                <p className="text-xs tracking-[0.16em] text-ink-soft uppercase">
+                <p className="text-[0.65rem] tracking-[0.16em] text-ink-soft uppercase sm:text-xs">
                   {p.tag}
                 </p>
-                <h3 className="font-display mt-3 text-xl text-ink sm:text-2xl">
+                <h3 className="font-display mt-2 text-lg text-ink sm:mt-3 sm:text-xl lg:text-2xl">
                   {p.href ? (
                     <a
                       href={p.href}
@@ -75,9 +73,11 @@ export function Work() {
                     p.title
                   )}
                 </h3>
-                <p className="mt-3 text-xs text-ink-soft">{p.meta}</p>
+                <p className="mt-2 text-[0.7rem] leading-snug text-ink-soft sm:mt-3 sm:text-xs">
+                  {p.meta}
+                </p>
               </div>
-              <p className="max-w-prose text-sm leading-relaxed text-ink-soft sm:pt-6 sm:text-[0.95rem]">
+              <p className="body-copy max-w-prose text-ink-soft sm:pt-5">
                 {p.blurb}
               </p>
             </motion.article>

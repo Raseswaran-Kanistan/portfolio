@@ -3,6 +3,12 @@ import { fadeUp, sectionTransition, sectionView } from '../lib/motion'
 
 const items = [
   {
+    label: 'Company',
+    value: 'hSenid Mobile Solutions',
+    detail:
+      'Associate Full-Cycle Engineer — Dedicated Quality Assurance and production implementation',
+  },
+  {
     label: 'Publication',
     value: 'IEEE ICBC 2025',
     detail: 'Behavioural analysis for money laundering in the Bitcoin network',
@@ -36,15 +42,13 @@ export function Credibility() {
           viewport={sectionView}
           transition={sectionTransition()}
         >
-          <p className="mb-3 text-xs font-medium tracking-[0.2em] text-signal-deep uppercase">
-            Credibility
-          </p>
-          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <p className="section-label text-signal-deep">Credibility</p>
+          <h2 className="section-title text-ink">
             Signals that hold up under scrutiny.
           </h2>
         </motion.div>
 
-        <ul className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-x-8 gap-y-8 sm:mt-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-10">
           {items.map((item, i) => (
             <motion.li
               key={item.label}
@@ -52,15 +56,15 @@ export function Credibility() {
               whileInView={fadeUp.animate}
               viewport={sectionView}
               transition={sectionTransition(i * 0.06)}
-              className="border-t border-ink/15 pt-5"
+              className="border-t border-ink/15 pt-4 sm:pt-5"
             >
-              <p className="text-xs tracking-[0.16em] text-ink-soft uppercase">
+              <p className="text-[0.65rem] tracking-[0.16em] text-ink-soft uppercase sm:text-xs">
                 {item.label}
               </p>
-              <p className="font-display mt-2 text-xl text-ink">{item.value}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {item.detail}
+              <p className="font-display mt-1.5 text-lg text-ink sm:mt-2 sm:text-xl">
+                {item.value}
               </p>
+              <p className="body-copy mt-2 text-ink-soft">{item.detail}</p>
             </motion.li>
           ))}
         </ul>

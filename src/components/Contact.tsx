@@ -18,6 +18,11 @@ const links = [
     href: 'https://github.com/Raseswaran-Kanistan',
   },
   {
+    label: 'Company',
+    value: 'hSenid Mobile Solutions',
+    href: undefined as string | undefined,
+  },
+  {
     label: 'Location',
     value: 'Ariyalai, Jaffna · Wellawatte, Colombo',
     href: undefined as string | undefined,
@@ -37,27 +42,26 @@ export function Contact() {
           transition={sectionTransition()}
           className="max-w-2xl"
         >
-          <p className="mb-3 text-xs font-medium tracking-[0.2em] text-signal-deep uppercase">
-            Contact
-          </p>
-          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <p className="section-label text-signal-deep">Contact</p>
+          <h2 className="section-title text-ink">
             Let’s talk about reliable delivery.
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+          <p className="body-copy mt-3 text-ink-soft sm:mt-4">
             Open to conversations about Quality Assurance, Full-Cycle
-            engineering, and Forward Deployed Engineering work.
+            engineering, and Forward Deployed Engineering work at hSenid Mobile
+            Solutions and beyond.
           </p>
         </motion.div>
 
-        <ul className="mt-12 space-y-0">
+        <ul className="mt-10 space-y-0 sm:mt-12">
           {links.map((l, i) => {
             const inner = (
               <>
-                <span className="w-28 shrink-0 text-xs tracking-[0.14em] text-ink-soft uppercase">
+                <span className="w-24 shrink-0 text-[0.65rem] tracking-[0.14em] text-ink-soft uppercase sm:w-28 sm:text-xs">
                   {l.label}
                 </span>
                 <span
-                  className={`font-display text-lg text-ink sm:text-xl ${l.href ? 'transition group-hover:text-signal-deep' : ''}`}
+                  className={`font-display text-base break-all text-ink sm:text-lg lg:text-xl ${l.href ? 'transition group-hover:text-signal-deep' : ''}`}
                 >
                   {l.value}
                 </span>
@@ -78,12 +82,12 @@ export function Contact() {
                     href={l.href}
                     target={l.href.startsWith('http') ? '_blank' : undefined}
                     rel={l.href.startsWith('http') ? 'noreferrer' : undefined}
-                    className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-8"
+                    className="group flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:gap-8 sm:py-4"
                   >
                     {inner}
                   </a>
                 ) : (
-                  <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-8">
+                  <div className="flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:gap-8 sm:py-4">
                     {inner}
                   </div>
                 )}
@@ -95,7 +99,7 @@ export function Contact() {
         <motion.a
           href={`${import.meta.env.BASE_URL}Kanistan-Raseswaran.pdf`}
           download
-          className="mt-12 inline-flex items-center border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink/50 hover:bg-mist/60"
+          className="btn-secondary mt-10 w-full sm:mt-12 sm:w-auto"
           initial={reduce ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={sectionView}
@@ -104,9 +108,9 @@ export function Contact() {
           Download CV
         </motion.a>
 
-        <p className="mt-16 text-xs text-ink-soft/80">
-          © {new Date().getFullYear()} Kanistan Raseswaran · Ariyalai, Jaffna ·
-          Wellawatte, Colombo
+        <p className="mt-12 text-[0.7rem] text-ink-soft/80 sm:mt-16 sm:text-xs">
+          © {new Date().getFullYear()} Kanistan Raseswaran · hSenid Mobile
+          Solutions · Ariyalai, Jaffna · Wellawatte, Colombo
         </p>
       </div>
     </section>

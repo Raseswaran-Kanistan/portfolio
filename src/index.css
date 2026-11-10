@@ -45,10 +45,30 @@
   }
 
   .section-pad {
-    @apply mx-auto max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-y {
-    @apply py-24 sm:py-28;
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  .section-label {
+    @apply mb-2 text-[0.65rem] font-medium tracking-[0.18em] uppercase sm:mb-3 sm:text-xs sm:tracking-[0.2em];
+  }
+
+  .section-title {
+    @apply font-display text-[1.65rem] leading-snug tracking-tight sm:text-3xl lg:text-4xl;
+  }
+
+  .body-copy {
+    @apply text-[0.875rem] leading-relaxed sm:text-[0.95rem] lg:text-base;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center bg-ink px-4 py-2.5 text-[0.8125rem] font-medium text-paper transition hover:bg-ink-soft sm:min-h-12 sm:px-5 sm:text-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center border border-ink/25 px-4 py-2.5 text-[0.8125rem] font-medium text-ink transition hover:border-ink/50 hover:bg-mist/60 sm:min-h-12 sm:px-5 sm:text-sm;
   }
 }
