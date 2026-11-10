@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { easeOut } from '../lib/motion'
 
 const links = [
   { href: '#work', label: 'Work' },
@@ -10,14 +11,14 @@ export function Nav() {
   return (
     <motion.header
       className="absolute inset-x-0 top-0 z-20"
-      initial={{ opacity: 0, y: -12 }}
+      initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.15 }}
+      transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+      <div className="section-pad flex items-center justify-between py-5">
         <a
           href="#top"
-          className="font-display text-sm font-bold tracking-[0.14em] text-ink uppercase"
+          className="font-display text-base tracking-[0.08em] text-ink"
         >
           KR
         </a>

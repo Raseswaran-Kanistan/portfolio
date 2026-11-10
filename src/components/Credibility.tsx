@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { fadeUp, sectionTransition, sectionView } from '../lib/motion'
 
 const items = [
   {
@@ -27,18 +28,18 @@ export function Credibility() {
   const reduce = useReducedMotion()
 
   return (
-    <section className="bg-mist/50 py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <section className="section-y bg-mist/50">
+      <div className="section-pad">
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          initial={reduce ? false : fadeUp.initial}
+          whileInView={fadeUp.animate}
+          viewport={sectionView}
+          transition={sectionTransition()}
         >
           <p className="mb-3 text-xs font-medium tracking-[0.2em] text-signal-deep uppercase">
             Credibility
           </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
             Signals that hold up under scrutiny.
           </h2>
         </motion.div>
@@ -47,19 +48,19 @@ export function Credibility() {
           {items.map((item, i) => (
             <motion.li
               key={item.label}
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.06 }}
+              initial={reduce ? false : fadeUp.initial}
+              whileInView={fadeUp.animate}
+              viewport={sectionView}
+              transition={sectionTransition(i * 0.06)}
               className="border-t border-ink/15 pt-5"
             >
               <p className="text-xs tracking-[0.16em] text-ink-soft uppercase">
                 {item.label}
               </p>
-              <p className="font-display mt-2 text-xl font-bold text-ink">
-                {item.value}
+              <p className="font-display mt-2 text-xl text-ink">{item.value}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                {item.detail}
               </p>
-              <p className="mt-2 text-sm text-ink-soft">{item.detail}</p>
             </motion.li>
           ))}
         </ul>

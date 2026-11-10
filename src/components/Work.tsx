@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { fadeUp, sectionTransition, sectionView } from '../lib/motion'
 
 const projects = [
   {
@@ -30,18 +31,18 @@ export function Work() {
   const reduce = useReducedMotion()
 
   return (
-    <section id="work" className="relative bg-paper py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="work" className="section-y relative bg-paper">
+      <div className="section-pad">
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          initial={reduce ? false : fadeUp.initial}
+          whileInView={fadeUp.animate}
+          viewport={sectionView}
+          transition={sectionTransition()}
         >
           <p className="mb-3 text-xs font-medium tracking-[0.2em] text-signal-deep uppercase">
             Selected work
           </p>
-          <h2 className="font-display max-w-2xl text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <h2 className="font-display max-w-2xl text-3xl tracking-tight text-ink sm:text-4xl">
             Proof over polish — releases, products, research.
           </h2>
         </motion.div>
@@ -50,17 +51,17 @@ export function Work() {
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              className="group grid gap-4 py-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] sm:gap-10"
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: i * 0.08 }}
+              className="grid gap-4 py-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] sm:gap-10"
+              initial={reduce ? false : fadeUp.initial}
+              whileInView={fadeUp.animate}
+              viewport={sectionView}
+              transition={sectionTransition(i * 0.07)}
             >
               <div>
                 <p className="text-xs tracking-[0.16em] text-ink-soft uppercase">
                   {p.tag}
                 </p>
-                <h3 className="font-display mt-3 text-xl font-bold text-ink sm:text-2xl">
+                <h3 className="font-display mt-3 text-xl text-ink sm:text-2xl">
                   {p.href ? (
                     <a
                       href={p.href}
